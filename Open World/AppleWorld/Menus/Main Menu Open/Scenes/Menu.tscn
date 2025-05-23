@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://kcfx1o1g5vhi"]
+
+[ext_resource type="Script" uid="uid://bp2i56vfwu8ol" path="res://Open World/AppleWorld/Menus/Main Menu Open/Scripts/Menu.gd" id="1_lb0px"]
+[ext_resource type="FontFile" uid="uid://dfv6unct2kcgs" path="res://Font/Font.ttf" id="2_gnc7e"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lb0px")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Back" type="Button" parent="Node"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 61.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("2_gnc7e")
+text = "Back"
+
+[node name="Exit" type="Button" parent="Node"]
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 61.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("2_gnc7e")
+text = "Exit
+"
+
+[node name="Help" type="Button" parent="Node"]
+offset_left = 16.0
+offset_top = 56.0
+offset_right = 60.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("2_gnc7e")
+text = "Help"
+
+[connection signal="pressed" from="Node/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Node/Exit" to="." method="_on_exit_pressed"]

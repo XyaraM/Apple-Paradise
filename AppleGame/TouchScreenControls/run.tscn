@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgppj5286fo53"]
+
+[ext_resource type="Texture2D" uid="uid://n160y2osfue1" path="res://AppleGame/TouchScreenControls/Sprites/run.png" id="1_44rx2"]
+
+[node name="TouchScreenButton" type="TouchScreenButton"]
+texture_normal = ExtResource("1_44rx2")
+action = "Accelerate"

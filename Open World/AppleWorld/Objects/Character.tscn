@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct3hia0m2yg7h"]
+
+[ext_resource type="Script" uid="uid://dhpouy1kqkdcl" path="res://Open World/AppleWorld/Scripts/Character.gd" id="1_25x33"]
+[ext_resource type="PackedScene" uid="uid://c4xaq47epwhen" path="res://Character/Animated Sprites/Objects/walk.tscn" id="2_rwwqf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_30btq"]
+radius = 17.3913
+height = 109.091
+
+[node name="Character" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_25x33")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.50839, 0.713916)
+shape = SubResource("CapsuleShape2D_30btq")
+
+[node name="Walk" parent="." instance=ExtResource("2_rwwqf")]
+scale = Vector2(2.25, 2.25)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

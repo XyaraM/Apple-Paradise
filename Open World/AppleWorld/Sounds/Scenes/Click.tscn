@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfr8jtlp3ycm8"]
+
+[ext_resource type="AudioStream" uid="uid://dy6kqieqmk26l" path="res://Open World/AppleWorld/Sounds/264762__farpro__guiclick.ogg" id="1_rq3xe"]
+
+[node name="Click" type="AudioStreamPlayer"]
+stream = ExtResource("1_rq3xe")

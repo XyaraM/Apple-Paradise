@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct2ismpm183bb"]
+
+[ext_resource type="Script" uid="uid://cd4fxuuajmbuk" path="res://AppleGame/Scenes/debug.gd" id="1_ladrb"]
+[ext_resource type="FontFile" uid="uid://bqsrq58mg0jk8" path="res://AppleGame/UI/Font/Minecraft.ttf" id="2_ahhdt"]
+
+[node name="Debug" type="Node2D"]
+script = ExtResource("1_ladrb")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("2_ahhdt")
+text = "DEBUG MODE"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 80.0
+offset_right = 205.0
+offset_bottom = 116.0
+theme_override_fonts/font = ExtResource("2_ahhdt")
+theme_override_font_sizes/font_size = 9
+text = "Z - Spawn Random Apple
+X - Activate Hardmode
+C - Activate Ultra Hardmode
+V - Check Highscore
+B - Spawn Bad Apple (Hardmode)
+N - Delete Apples"

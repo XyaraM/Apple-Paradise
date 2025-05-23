@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://3jw26g6y1wo5"]
+
+[sub_resource type="GDScript" id="GDScript_yd6wl"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	Variablemanager.apples += Variablemanager.ApplCount
+	print(Variablemanager.apples)
+"
+
+[node name="Saveapples" type="Node2D"]
+script = SubResource("GDScript_yd6wl")

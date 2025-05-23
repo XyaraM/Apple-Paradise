@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbad66xtprndn"]
+
+[ext_resource type="Texture2D" uid="uid://bvoclawn3y4k1" path="res://AppleGame/TouchScreenControls/Sprites/enter.png" id="1_anb8p"]
+
+[node name="enter" type="TouchScreenButton"]
+scale = Vector2(8, 8)
+texture_normal = ExtResource("1_anb8p")
+action = "ui_accept"

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c07dla0aeia4c"]
+
+[ext_resource type="Script" uid="uid://dvqdqqtb4pkci" path="res://Variables/apposition.gd" id="1_tw4g1"]
+
+[node name="Apposition" type="Node2D"]
+script = ExtResource("1_tw4g1")

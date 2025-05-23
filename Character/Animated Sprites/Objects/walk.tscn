@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://c4xaq47epwhen"]
+
+[ext_resource type="Texture2D" uid="uid://1opy8pd3miwa" path="res://Character/Animated Sprites/character-sheet.png" id="1_6pv1s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwpco"]
+atlas = ExtResource("1_6pv1s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kokio"]
+atlas = ExtResource("1_6pv1s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l7p4"]
+atlas = ExtResource("1_6pv1s")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3e5g"]
+atlas = ExtResource("1_6pv1s")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q14f"]
+atlas = ExtResource("1_6pv1s")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fttq"]
+atlas = ExtResource("1_6pv1s")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xecuk"]
+atlas = ExtResource("1_6pv1s")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lebvk"]
+atlas = ExtResource("1_6pv1s")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17l12"]
+atlas = ExtResource("1_6pv1s")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7nfki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwpco")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kokio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l7p4")
+}],
+"loop": true,
+"name": &"walkdown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3e5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q14f")
+}],
+"loop": true,
+"name": &"walkleft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fttq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xecuk")
+}],
+"loop": true,
+"name": &"walkright",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lebvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17l12")
+}],
+"loop": true,
+"name": &"walkup",
+"speed": 5.0
+}]
+
+[node name="Walk" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_7nfki")
+animation = &"stand"

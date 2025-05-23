@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://dae8nlhs22aci"]
+
+[ext_resource type="Script" uid="uid://nypbd26avjed" path="res://Open World/AppleWorld/Menus/Store/Scripts/About1.gd" id="1_2tn30"]
+[ext_resource type="FontFile" uid="uid://dfv6unct2kcgs" path="res://Font/Font.ttf" id="2_h53jr"]
+
+[node name="About1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2tn30")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 69.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("2_h53jr")
+text = "Back"
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 232.0
+offset_right = 553.0
+offset_bottom = 359.0
+theme_override_fonts/font = ExtResource("2_h53jr")
+text = "With this ability you can throw the bad apples or the wasted ones
+outside of the basket.
+ACTIVATE IT WITH \"<\"
+
+This skill has a cooldown of 20 seconds"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

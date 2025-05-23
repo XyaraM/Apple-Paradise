@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3p1hi4rrms4u"]
+
+[ext_resource type="Texture2D" uid="uid://w27rwjpsnkdy" path="res://AppleGame/Sprites/AppleBad.png" id="2_8p6at"]
+[ext_resource type="Script" uid="uid://436wg3r8x5hk" path="res://AppleGame/Scenes/AppleBad.gd" id="3_7eq64"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkp1c"]
+radius = 27.074
+
+[node name="Appl" type="StaticBody2D"]
+script = ExtResource("3_7eq64")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(1.75, 1.84375)
+texture = ExtResource("2_8p6at")
+
+[node name="Area2D" type="Area2D" parent="." groups=["AppleBad"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["AppleBad"]]
+shape = SubResource("CircleShape2D_bkp1c")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

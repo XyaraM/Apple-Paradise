@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwj8wfjjys4j1"]
+
+[ext_resource type="Texture2D" uid="uid://c7wegiw5xmrvn" path="res://AppleGame/TouchScreenControls/Sprites/left.png" id="1_wdx7t"]
+
+[node name="left" type="TouchScreenButton"]
+texture_normal = ExtResource("1_wdx7t")
+passby_press = true
+action = "ui_left"

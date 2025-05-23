@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp8ytda7swl6d"]
+
+[ext_resource type="Script" uid="uid://c3g8h6ept7mo6" path="res://Open World/AppleWorld/Interaction System/Scripts/interaction_area.gd" id="1_eejo7"]
+
+[node name="InteractionArea" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_eejo7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

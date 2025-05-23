@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckkxpvobfvo0s"]
+
+[ext_resource type="Texture2D" uid="uid://b3f3hwygu15bn" path="res://Open World/AppleWorld/Textures/Open1/Character.png" id="1_gnq68"]
+[ext_resource type="Script" uid="uid://byp74yxojsmxo" path="res://Open World/AppleWorld/Scripts/ArcadeInteract.gd" id="1_xmr43"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qehuf"]
+size = Vector2(41, 41)
+
+[node name="ArcadeInteract" type="StaticBody2D"]
+script = ExtResource("1_xmr43")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gnq68")
+
+[node name="Area2D" type="Area2D" parent="." groups=["ArcadeInteract"]]
+scale = Vector2(0.92, 1.44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["ArcadeInteract"]]
+shape = SubResource("RectangleShape2D_qehuf")
+
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

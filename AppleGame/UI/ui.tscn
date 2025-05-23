@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://8on08rgptlxu"]
+
+[ext_resource type="PackedScene" uid="uid://dtpy5iwmrds1q" path="res://AppleGame/UI/counter.tscn" id="1_u1owt"]
+[ext_resource type="PackedScene" uid="uid://bbw06yku7844l" path="res://AppleGame/UI/wasted_apples_counter.tscn" id="2_0cyxj"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AppleCounter" parent="." instance=ExtResource("1_u1owt")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -545.0
+offset_top = 20.0
+offset_right = -406.0
+offset_bottom = 57.0
+grow_horizontal = 2
+
+[node name="Control" parent="." instance=ExtResource("2_0cyxj")]
+layout_mode = 1
+offset_left = 221.0
+offset_top = 7.0
+offset_right = 221.0
+offset_bottom = 7.0

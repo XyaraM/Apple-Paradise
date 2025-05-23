@@ -1,0 +1,134 @@
+[gd_scene load_steps=16 format=3 uid="uid://b7pn632lgmnt6"]
+
+[ext_resource type="PackedScene" uid="uid://knw1xsaegsyt" path="res://AppleGame/Objects/Character.tscn" id="1_bqiqh"]
+[ext_resource type="Script" uid="uid://didv0pc54ylg7" path="res://AppleGame/Scenes/Level.gd" id="1_vhhp6"]
+[ext_resource type="Texture2D" uid="uid://vuairkh60075" path="res://AppleGame/Sprites/background.png" id="2_12rt7"]
+[ext_resource type="PackedScene" uid="uid://8on08rgptlxu" path="res://AppleGame/UI/ui.tscn" id="2_p7o51"]
+[ext_resource type="Script" uid="uid://bm47p5gplibny" path="res://AppleGame/Scenes/Timer.gd" id="3_ou743"]
+[ext_resource type="Script" uid="uid://b26vk2ts542bl" path="res://AppleGame/Scenes/Apples.gd" id="3_yoftq"]
+[ext_resource type="Script" uid="uid://ca7fbwgecc6rn" path="res://AppleGame/Scenes/Apple1.gd" id="5_4ck8a"]
+[ext_resource type="Texture2D" uid="uid://60ckh4tdc2qq" path="res://AppleGame/Sprites/WallApple.png" id="5_bwvrd"]
+[ext_resource type="PackedScene" uid="uid://bbtarkkckfpis" path="res://AppleGame/Scenes/wall_void.tscn" id="8_2koar"]
+[ext_resource type="PackedScene" uid="uid://bi8obrlw3b62o" path="res://AppleGame/TouchScreenControls/right.tscn" id="10_63qhp"]
+[ext_resource type="PackedScene" uid="uid://dwj8wfjjys4j1" path="res://AppleGame/TouchScreenControls/left.tscn" id="11_6phmb"]
+[ext_resource type="PackedScene" uid="uid://cgppj5286fo53" path="res://AppleGame/TouchScreenControls/run.tscn" id="11_vw66v"]
+[ext_resource type="PackedScene" uid="uid://c07dla0aeia4c" path="res://AppleGame/Scenes/apposition.tscn" id="12_55ib7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpldl"]
+size = Vector2(13.6, 5.6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cetmq"]
+size = Vector2(37, 88.9806)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_vhhp6")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(574, 324)
+scale = Vector2(18.0625, 20.25)
+texture = ExtResource("2_12rt7")
+
+[node name="Node2D" parent="." instance=ExtResource("1_bqiqh")]
+position = Vector2(571, 510)
+scale = Vector2(10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(0.0999985, 4.59999)
+shape = SubResource("RectangleShape2D_fpldl")
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+position = Vector2(0, 6.10352e-05)
+scale = Vector2(1, 8.24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+position = Vector2(-53.5, 39.6359)
+shape = SubResource("RectangleShape2D_cetmq")
+
+[node name="WallRight" type="StaticBody2D" parent="."]
+position = Vector2(0, 6.10352e-05)
+scale = Vector2(1, 8.24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+position = Vector2(1208, 39.8058)
+shape = SubResource("RectangleShape2D_cetmq")
+
+[node name="WallVoid" parent="." instance=ExtResource("8_2koar")]
+position = Vector2(561, 651)
+scale = Vector2(7.19409, -1.28666)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(120, 32)
+scale = Vector2(8.88667, 5.97815)
+texture = ExtResource("5_bwvrd")
+
+[node name="UI" parent="." instance=ExtResource("2_p7o51")]
+offset_left = 576.0
+offset_top = 8.0
+offset_right = 576.0
+offset_bottom = 8.0
+
+[node name="falseotrue" type="Timer" parent="."]
+wait_time = 1.314
+autostart = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.663
+one_shot = true
+script = ExtResource("3_ou743")
+
+[node name="Apples" type="Node2D" parent="."]
+position = Vector2(-8, -168)
+script = ExtResource("3_yoftq")
+
+[node name="Apple1" type="Marker2D" parent="Apples"]
+position = Vector2(185, 66)
+script = ExtResource("5_4ck8a")
+
+[node name="Apple2" type="Marker2D" parent="Apples"]
+position = Vector2(564, 50)
+
+[node name="Apple3" type="Marker2D" parent="Apples"]
+position = Vector2(997, 82)
+
+[node name="Apples2" type="Node2D" parent="."]
+position = Vector2(-8, 688)
+script = ExtResource("3_yoftq")
+
+[node name="Apple1" type="Marker2D" parent="Apples2"]
+position = Vector2(185, 66)
+script = ExtResource("5_4ck8a")
+
+[node name="Apple2" type="Marker2D" parent="Apples2"]
+position = Vector2(564, 50)
+
+[node name="Apple3" type="Marker2D" parent="Apples2"]
+position = Vector2(997, 82)
+
+[node name="AppleCount" type="Node2D" parent="."]
+
+[node name="AppleMovement" type="Node2D" parent="."]
+
+[node name="Apple1 - Left" type="Timer" parent="AppleMovement"]
+wait_time = 0.334
+one_shot = true
+autostart = true
+
+[node name="TouchControls" type="Node2D" parent="."]
+
+[node name="left" parent="TouchControls" instance=ExtResource("11_6phmb")]
+position = Vector2(-11, 255)
+scale = Vector2(8, 8)
+
+[node name="right" parent="TouchControls" instance=ExtResource("10_63qhp")]
+position = Vector2(1032, 256)
+scale = Vector2(8, 8)
+
+[node name="TouchScreenButton" parent="." instance=ExtResource("11_vw66v")]
+position = Vector2(1000, 80)
+scale = Vector2(5.5, 5.5)
+
+[node name="Apposition" parent="." instance=ExtResource("12_55ib7")]
+
+[connection signal="ApShoot" from="Node2D" to="." method="_on_node_2d_ap_shoot"]
+[connection signal="timeout" from="falseotrue" to="Node2D" method="_on_falseotrue_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

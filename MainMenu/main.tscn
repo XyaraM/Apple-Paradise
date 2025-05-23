@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2nejp5bpcp1e"]
+
+[ext_resource type="Script" uid="uid://b5cd4bhlw51iu" path="res://MainMenu/main.gd" id="1_t7545"]
+[ext_resource type="Texture2D" uid="uid://c7fsvhj8a8qup" path="res://AppleGame/Sprites/Apple.png" id="2_dbws0"]
+[ext_resource type="FontFile" uid="uid://bqsrq58mg0jk8" path="res://AppleGame/UI/Font/Minecraft.ttf" id="2_hap76"]
+[ext_resource type="PackedScene" uid="uid://0ynh0j6jch36" path="res://AppleGame/Sounds/Scenes/collectedapple.tscn" id="2_nywku"]
+[ext_resource type="PackedScene" uid="uid://cti66di7stmi2" path="res://AppleGame/TouchScreenControls/AppleEasterEgg.tscn" id="5_dv5dn"]
+[ext_resource type="FontFile" uid="uid://dfv6unct2kcgs" path="res://Font/Font.ttf" id="6_3cjqn"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7545")
+
+[node name="collectedapple" parent="." instance=ExtResource("2_nywku")]
+
+[node name="Buttons" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 457.554
+offset_top = 415.724
+offset_right = 580.554
+offset_bottom = 538.724
+rotation = 0.000293801
+scale = Vector2(1.64025, 1.52593)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_hap76")
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="Exit" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hap76")
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+
+[node name="Apple" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 426.0
+offset_top = 32.0
+offset_right = 549.0
+offset_bottom = 40.0
+scale = Vector2(2.22115, 30.1607)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Apple"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Apple/VBoxContainer2"]
+position = Vector2(59.8789, 7.95738)
+scale = Vector2(3.13897, 0.237735)
+texture = ExtResource("2_dbws0")
+
+[node name="play" type="Timer" parent="."]
+wait_time = 0.254
+one_shot = true
+
+[node name="Labels" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 39.0
+offset_right = 768.0
+offset_bottom = 143.0
+
+[node name="Label2" type="Label" parent="Labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hap76")
+theme_override_font_sizes/font_size = 57
+text = "Apple Paradise"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1058.0
+offset_top = 601.0
+offset_right = 1137.0
+offset_bottom = 629.0
+theme_override_fonts/font = ExtResource("2_hap76")
+theme_override_font_sizes/font_size = 23
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 601.0
+offset_right = 1048.0
+offset_bottom = 625.0
+theme_override_fonts/font = ExtResource("2_hap76")
+theme_override_font_sizes/font_size = 23
+text = "Highscore:"
+
+[node name="AppleEasterEgg" parent="." instance=ExtResource("5_dv5dn")]
+position = Vector2(450, 164)
+scale = Vector2(13.5625, 13.6875)
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 613.0
+offset_right = 109.0
+offset_bottom = 636.0
+theme_override_fonts/font = ExtResource("6_3cjqn")
+text = "Version: Public Alpha V4"
+
+[connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="timeout" from="play" to="." method="_on_play_timeout"]

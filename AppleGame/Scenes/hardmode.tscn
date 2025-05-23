@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv3ptcfj7o0uu"]
+
+[ext_resource type="Script" uid="uid://bavpnw0y1anqc" path="res://AppleGame/Scenes/hardmode.gd" id="1_jf3yy"]
+[ext_resource type="FontFile" uid="uid://bqsrq58mg0jk8" path="res://AppleGame/UI/Font/Minecraft.ttf" id="1_pbfte"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jf3yy")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 904.0
+offset_top = 88.0
+offset_right = 1031.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("1_pbfte")
+theme_override_font_sizes/font_size = 25

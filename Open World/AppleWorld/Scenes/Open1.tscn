@@ -1,0 +1,398 @@
+[gd_scene load_steps=15 format=3 uid="uid://op6e4tjk60ug"]
+
+[ext_resource type="Script" uid="uid://ddumdos8abeqg" path="res://Open World/AppleWorld/Scripts/Open1.gd" id="1_kwgbd"]
+[ext_resource type="Texture2D" uid="uid://bj8to6ju1nunj" path="res://Open World/AppleWorld/Tiles/Tilemap.png" id="2_axx3s"]
+[ext_resource type="Texture2D" uid="uid://cm0x6whww7ju0" path="res://Open World/AppleWorld/Textures/Open1/Back.png" id="2_oqnf4"]
+[ext_resource type="PackedScene" uid="uid://ct3hia0m2yg7h" path="res://Open World/AppleWorld/Objects/Character.tscn" id="3_oj0ua"]
+[ext_resource type="PackedScene" uid="uid://ba757uvxfora5" path="res://Open World/AppleWorld/Scenes/Applequantiy.tscn" id="4_w5uac"]
+[ext_resource type="PackedScene" uid="uid://ckkxpvobfvo0s" path="res://Open World/AppleWorld/Objects/ArcadeInteract.tscn" id="5_4asih"]
+[ext_resource type="PackedScene" uid="uid://38vd0yn0a8vr" path="res://Open World/AppleWorld/Objects/StoreInteract.tscn" id="6_a6mwv"]
+[ext_resource type="PackedScene" uid="uid://dogxn6tq2cnlk" path="res://Open World/AppleWorld/Objects/test_guy.tscn" id="8_wnwe8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0f56j"]
+texture = ExtResource("2_axx3s")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+3:4/0 = 0
+3:5/0 = 0
+3:6/0 = 0
+0:7/0 = 0
+2:7/0 = 0
+1:6/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+2:6/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+1:7/0 = 0
+0:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+2:10/0 = 0
+2:9/0 = 0
+1:9/0 = 0
+0:11/0 = 0
+6:2/0 = 0
+6:1/0 = 0
+6:0/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+4:1/0 = 0
+4:0/0 = 0
+7:0/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+11:4/0 = 0
+10:4/0 = 0
+9:4/0 = 0
+8:4/0 = 0
+7:4/0 = 0
+7:3/0 = 0
+7:2/0 = 0
+7:1/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+13:1/0 = 0
+13:2/0 = 0
+12:2/0 = 0
+11:1/0 = 0
+10:1/0 = 0
+11:2/0 = 0
+13:3/0 = 0
+9:3/0 = 0
+8:3/0 = 0
+8:2/0 = 0
+12:1/0 = 0
+10:5/0 = 0
+10:6/0 = 0
+9:6/0 = 0
+8:6/0 = 0
+7:6/0 = 0
+7:5/0 = 0
+7:7/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+9:8/0 = 0
+9:7/0 = 0
+8:7/0 = 0
+8:10/0 = 0
+7:10/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+9:10/0 = 0
+6:5/0 = 0
+5:5/0 = 0
+4:5/0 = 0
+4:4/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:4/0 = 0
+5:4/0 = 0
+6:3/0 = 0
+13:5/0 = 0
+12:5/0 = 0
+11:5/0 = 0
+13:9/0 = 0
+12:9/0 = 0
+11:9/0 = 0
+12:8/0 = 0
+12:7/0 = 0
+12:6/0 = 0
+11:8/0 = 0
+13:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2ycts"]
+sources/0 = SubResource("TileSetAtlasSource_0f56j")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dk07"]
+texture = ExtResource("2_axx3s")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+0:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+11:10/0 = 0
+11:11/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+12:11/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+13:11/0 = 0
+13:12/0 = 0
+14:8/0 = 0
+14:9/0 = 0
+14:10/0 = 0
+14:11/0 = 0
+14:12/0 = 0
+15:11/0 = 0
+15:10/0 = 0
+15:9/0 = 0
+15:8/0 = 0
+14:7/0 = 0
+13:7/0 = 0
+12:7/0 = 0
+11:7/0 = 0
+15:7/0 = 0
+10:7/0 = 0
+10:8/0 = 0
+10:9/0 = 0
+10:10/0 = 0
+10:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_an1va"]
+sources/0 = SubResource("TileSetAtlasSource_4dk07")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_immub"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkxr6"]
+size = Vector2(16.254, 698.242)
+
+[node name="Open1" type="Node2D"]
+position = Vector2(8, 0)
+script = ExtResource("1_kwgbd")
+
+[node name="Main" type="TileMap" parent="."]
+position = Vector2(-3592, -1608)
+scale = Vector2(5.78082, 5.74938)
+tile_set = SubResource("TileSet_2ycts")
+format = 2
+
+[node name="Decoration" type="TileMap" parent="."]
+position = Vector2(-3592, -1608)
+scale = Vector2(5.78082, 5.74938)
+tile_set = SubResource("TileSet_an1va")
+format = 2
+
+[node name="Wallpaper" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(168, 304)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wallpaper"]
+position = Vector2(400, 0)
+scale = Vector2(15.2, 11.64)
+texture = ExtResource("2_oqnf4")
+
+[node name="Character" parent="." instance=ExtResource("3_oj0ua")]
+position = Vector2(568, 352)
+scale = Vector2(0.88, 1.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+shape = SubResource("RectangleShape2D_immub")
+
+[node name="Camera2D" type="Camera2D" parent="Character"]
+position_smoothing_enabled = true
+position_smoothing_speed = 24.075
+
+[node name="Applequantiy" parent="Character/Camera2D" instance=ExtResource("4_w5uac")]
+offset_left = -54.5454
+offset_top = 200.0
+offset_right = -54.5454
+offset_bottom = 200.0
+scale = Vector2(1.72, 1.88)
+metadata/_edit_use_anchors_ = true
+
+[node name="ArcadeInteract" parent="." instance=ExtResource("5_4asih")]
+position = Vector2(560, 32)
+scale = Vector2(-23.8493, 3.94073)
+
+[node name="wall1" type="StaticBody2D" parent="."]
+position = Vector2(-3216, -1160)
+scale = Vector2(1, 4.8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1"]
+position = Vector2(-17, 321.5)
+shape = SubResource("RectangleShape2D_tkxr6")
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2(2544, -1112)
+scale = Vector2(1.16, 4.72)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2(-17, 321.5)
+shape = SubResource("RectangleShape2D_tkxr6")
+
+[node name="wall3" type="StaticBody2D" parent="."]
+position = Vector2(-112, -64)
+rotation = -1.57017
+scale = Vector2(2.46195, 8.3431)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
+position = Vector2(447.477, -28.9403)
+shape = SubResource("RectangleShape2D_tkxr6")
+
+[node name="wall4" type="StaticBody2D" parent="."]
+position = Vector2(-1440, 1696)
+rotation = -1.57017
+scale = Vector2(2.14227, 8.3431)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall4"]
+position = Vector2(-141.592, 128.512)
+shape = SubResource("RectangleShape2D_tkxr6")
+
+[node name="StoreInteract" parent="." instance=ExtResource("6_a6mwv")]
+position = Vector2(584, 672)
+scale = Vector2(21.382, 2.8564)
+
+[node name="TestGuy" parent="." instance=ExtResource("8_wnwe8")]
+position = Vector2(-144, 392)
+
+[connection signal="arcadeinst" from="Character" to="." method="_on_character_arcadeinst"]
+[connection signal="menu" from="Character" to="." method="_on_character_menu"]
+[connection signal="storeinst" from="Character" to="." method="_on_character_storeinst"]

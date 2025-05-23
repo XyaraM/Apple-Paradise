@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cti66di7stmi2"]
+
+[ext_resource type="Texture2D" uid="uid://bvoclawn3y4k1" path="res://AppleGame/TouchScreenControls/Sprites/enter.png" id="1_ctjw2"]
+
+[node name="AppleEasterEgg" type="TouchScreenButton"]
+texture_normal = ExtResource("1_ctjw2")
+action = "EasterEgg"

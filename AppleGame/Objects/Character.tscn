@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://knw1xsaegsyt"]
+
+[ext_resource type="Script" uid="uid://dpnfksflabqw3" path="res://AppleGame/Objects/Character.gd" id="1_v4sf2"]
+[ext_resource type="Texture2D" uid="uid://dftvu1q4smmic" path="res://AppleGame/Sprites/Basker.png" id="2_exr3m"]
+[ext_resource type="PackedScene" uid="uid://0ynh0j6jch36" path="res://AppleGame/Sounds/Scenes/collectedapple.tscn" id="3_umxt0"]
+[ext_resource type="Script" uid="uid://c36r0obrketjw" path="res://AppleGame/States/FiniteStateMachine.gd" id="4_sk1l1"]
+[ext_resource type="Script" uid="uid://bf1xrk3rw25hy" path="res://AppleGame/Objects/dash_state.gd" id="5_hxci7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w8g4i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_exr3m")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ffft"]
+size = Vector2(16, 8)
+
+[node name="Node2D" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_v4sf2")
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.193
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w8g4i")
+animation = &"active"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["player"]]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_7ffft")
+
+[node name="collectedapple" parent="." instance=ExtResource("3_umxt0")]
+
+[node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
+script = ExtResource("4_sk1l1")
+state = NodePath("dash_state")
+
+[node name="dash_state" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("5_hxci7")
+
+[node name="Node" type="Node" parent="FiniteStateMachine"]
+
+[node name="DashCooldown1" type="Timer" parent="FiniteStateMachine"]
+wait_time = 0.5
+one_shot = true
+
+[node name="DashCooldown2" type="Timer" parent="FiniteStateMachine"]
+one_shot = true
+
+[node name="Tim" type="Node2D" parent="."]
+
+[node name="Cooldown" type="Timer" parent="Tim"]
+wait_time = 20.0
+one_shot = true
+
+[connection signal="timeout" from="DashTimer" to="FiniteStateMachine" method="_on_dash_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="FiniteStateMachine/DashCooldown1" to="FiniteStateMachine/dash_state" method="_on_dash_cooldown_1_timeout"]
+[connection signal="timeout" from="FiniteStateMachine/DashCooldown2" to="FiniteStateMachine/dash_state" method="_on_dash_cooldown_2_timeout"]
+[connection signal="timeout" from="Tim/Cooldown" to="." method="_on_cooldown_timeout"]

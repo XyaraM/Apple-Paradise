@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwneae5kvsjpq"]
+
+[ext_resource type="Script" uid="uid://hef346wcxa11" path="res://AppleGame/Scenes/gameover.gd" id="1_wxe7f"]
+[ext_resource type="Texture2D" uid="uid://b42a8j4fjxu2k" path="res://AppleGame/UI/Counter/label_bg.png" id="2_nqbey"]
+[ext_resource type="Script" uid="uid://cgn8rlgjo8kh0" path="res://AppleGame/Scenes/opacitygameovergray.gd" id="3_ixtjm"]
+[ext_resource type="FontFile" uid="uid://bqsrq58mg0jk8" path="res://AppleGame/UI/Font/Minecraft.ttf" id="4_e328n"]
+[ext_resource type="PackedScene" uid="uid://dbad66xtprndn" path="res://AppleGame/TouchScreenControls/enter.tscn" id="5_df2nb"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wxe7f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(26.9341, -33.8269)
+texture = ExtResource("2_nqbey")
+script = ExtResource("3_ixtjm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 219.0
+offset_top = -240.0
+offset_right = 292.0
+offset_bottom = -224.0
+grow_vertical = 2
+scale = Vector2(10.1801, 9.96487)
+theme_override_fonts/normal_font = ExtResource("4_e328n")
+text = "You Lose!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 250.0
+offset_right = 821.0
+offset_bottom = 290.0
+theme_override_fonts/normal_font = ExtResource("4_e328n")
+theme_override_font_sizes/normal_font_size = 37
+text = "Press Enter To Restart"
+fit_content = true
+autowrap_mode = 0
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 311.0
+offset_right = 877.0
+offset_bottom = 351.0
+theme_override_fonts/normal_font = ExtResource("4_e328n")
+theme_override_font_sizes/normal_font_size = 37
+text = "Press Esc To Exit"
+fit_content = true
+autowrap_mode = 0
+
+[node name="enter" parent="." instance=ExtResource("5_df2nb")]
+position = Vector2(-345, -222)
+scale = Vector2(114.25, 77.125)

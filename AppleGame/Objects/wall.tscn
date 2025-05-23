@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtyrtvxdh8j2h"]
+
+[ext_resource type="Script" uid="uid://c8nx6agwmng3o" path="res://AppleGame/Objects/wall.gd" id="1_3undk"]
+[ext_resource type="Texture2D" uid="uid://gku4dom13qwx" path="res://icon.png" id="1_q3chc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fqx3"]
+
+[node name="wall" type="Area2D" groups=["wall"]]
+script = ExtResource("1_3undk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -2)
+scale = Vector2(0.113281, 0.125)
+texture = ExtResource("1_q3chc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["wall"]]
+shape = SubResource("RectangleShape2D_5fqx3")

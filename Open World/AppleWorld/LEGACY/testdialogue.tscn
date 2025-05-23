@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfsk842eiqhx0"]
+
+[ext_resource type="Script" uid="uid://bildcl6d5tget" path="res://Open World/AppleWorld/LEGACY/testdialogue.gd" id="1_lpipm"]
+[ext_resource type="Texture2D" uid="uid://b3f3hwygu15bn" path="res://Open World/AppleWorld/Textures/Open1/Character.png" id="1_o03cx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bggsp"]
+radius = 41.9324
+
+[node name="Testdialogue" type="Node2D"]
+script = ExtResource("1_lpipm")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Dialogue1"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Dialogue1"]]
+scale = Vector2(3.05792, -3.21523)
+shape = SubResource("CircleShape2D_bggsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o03cx")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

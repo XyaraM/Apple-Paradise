@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0ynh0j6jch36"]
+
+[ext_resource type="AudioStream" uid="uid://dotd3g6xnerlh" path="res://AppleGame/Sounds/collectedapple.wav" id="1_m37j7"]
+
+[node name="collectedapple" type="AudioStreamPlayer"]
+stream = ExtResource("1_m37j7")

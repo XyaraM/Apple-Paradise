@@ -1,0 +1,130 @@
+[gd_scene load_steps=5 format=3 uid="uid://dflxnxy2pdf1o"]
+
+[ext_resource type="FontFile" uid="uid://dfv6unct2kcgs" path="res://Font/Font.ttf" id="1_8ujdb"]
+[ext_resource type="Script" uid="uid://chgr54qld7oqg" path="res://Open World/AppleWorld/Menus/Store/Scripts/StoreItems.gd" id="1_cixwm"]
+[ext_resource type="PackedScene" uid="uid://dfr8jtlp3ycm8" path="res://Open World/AppleWorld/Sounds/Scenes/Click.tscn" id="3_2upsq"]
+[ext_resource type="PackedScene" uid="uid://0ynh0j6jch36" path="res://AppleGame/Sounds/Scenes/collectedapple.tscn" id="3_pclcj"]
+
+[node name="Store" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 248.0
+offset_top = 24.0
+offset_right = 248.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cixwm")
+
+[node name="Text" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Text"]
+offset_left = 176.0
+offset_top = 296.0
+offset_right = 341.0
+offset_bottom = 319.0
+scale = Vector2(1.67456, 2.13843)
+theme_override_fonts/font = ExtResource("1_8ujdb")
+text = "Welcome to the Store!"
+
+[node name="Label3" type="Label" parent="Text"]
+offset_left = 136.0
+offset_top = 424.0
+offset_right = 301.0
+offset_bottom = 447.0
+scale = Vector2(0.963241, 1.11433)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8ujdb")
+
+[node name="Label5" type="Label" parent="Text"]
+offset_left = 384.0
+offset_top = 424.0
+offset_right = 549.0
+offset_bottom = 447.0
+scale = Vector2(0.963241, 1.11433)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8ujdb")
+
+[node name="Label4" type="Label" parent="Text"]
+offset_left = 456.0
+offset_top = 480.0
+offset_right = 683.0
+offset_bottom = 503.0
+scale = Vector2(0.963241, 1.11433)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8ujdb")
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="Buttons"]
+offset_left = 112.0
+offset_top = 384.0
+offset_right = 251.0
+offset_bottom = 415.0
+scale = Vector2(1.24397, 1.14874)
+theme_override_fonts/font = ExtResource("1_8ujdb")
+text = "Buy! (120 Apples)"
+
+[node name="Button2" type="Button" parent="Buttons"]
+offset_left = 360.0
+offset_top = 384.0
+offset_right = 501.0
+offset_bottom = 415.0
+scale = Vector2(1.24397, 1.14874)
+theme_override_fonts/font = ExtResource("1_8ujdb")
+text = "Buy! (200 Apples)"
+
+[node name="About" type="Button" parent="Buttons"]
+offset_left = 168.0
+offset_top = 456.0
+offset_right = 223.0
+offset_bottom = 487.0
+scale = Vector2(1.13229, 1)
+theme_override_fonts/font = ExtResource("1_8ujdb")
+text = "About"
+
+[node name="About2" type="Button" parent="Buttons"]
+offset_left = 416.0
+offset_top = 456.0
+offset_right = 471.0
+offset_bottom = 487.0
+scale = Vector2(1.13229, 1)
+theme_override_fonts/font = ExtResource("1_8ujdb")
+text = "About"
+
+[node name="Already acquired" type="Timer" parent="."]
+one_shot = true
+
+[node name="ItemTexts" type="Node2D" parent="."]
+
+[node name="Label2" type="Label" parent="ItemTexts"]
+offset_left = 104.0
+offset_top = 352.0
+offset_right = 269.0
+offset_bottom = 375.0
+scale = Vector2(1.20609, 1.43433)
+theme_override_fonts/font = ExtResource("1_8ujdb")
+text = "Increase dash speed"
+
+[node name="Enable delete" type="Label" parent="ItemTexts"]
+offset_left = 352.0
+offset_top = 352.0
+offset_right = 517.0
+offset_bottom = 375.0
+scale = Vector2(1.20609, 1.43433)
+theme_override_fonts/font = ExtResource("1_8ujdb")
+text = "Remove bad apples"
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Click" parent="Sounds" instance=ExtResource("3_2upsq")]
+
+[node name="collectedapple" parent="Sounds" instance=ExtResource("3_pclcj")]
+
+[connection signal="pressed" from="Buttons/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Buttons/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Buttons/About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="Buttons/About2" to="." method="_on_about_2_pressed"]
+[connection signal="timeout" from="Already acquired" to="." method="_on_already_acquired_timeout"]

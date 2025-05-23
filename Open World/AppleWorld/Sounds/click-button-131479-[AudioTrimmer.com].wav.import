@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://basmwmukg10hk"
+path="res://.godot/imported/click-button-131479-[AudioTrimmer.com].wav-f07fca37368ea7c3062b718ede868eac.sample"
+
+[deps]
+
+source_file="res://Open World/AppleWorld/Sounds/click-button-131479-[AudioTrimmer.com].wav"
+dest_files=["res://.godot/imported/click-button-131479-[AudioTrimmer.com].wav-f07fca37368ea7c3062b718ede868eac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

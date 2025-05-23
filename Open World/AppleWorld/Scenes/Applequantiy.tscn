@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba757uvxfora5"]
+
+[ext_resource type="Script" uid="uid://cehxh47ibdp7l" path="res://Open World/AppleWorld/Scripts/Applequantity.gd" id="1_3rxal"]
+[ext_resource type="FontFile" uid="uid://bqsrq58mg0jk8" path="res://AppleGame/UI/Font/Minecraft.ttf" id="2_ifsrt"]
+
+[node name="Applequantiy" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3rxal")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_ifsrt")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 46.0
+offset_bottom = -1.0
+theme_override_fonts/font = ExtResource("2_ifsrt")
+text = "Apples:"

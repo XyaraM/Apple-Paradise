@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://2y8bka7gucqx"]
+
+[ext_resource type="Script" uid="uid://ci3ykd3xku48g" path="res://Open World/AppleWorld/LEGACY/Dialogues/textbox.gd" id="1_xqdg2"]
+[ext_resource type="Texture2D" uid="uid://60ckh4tdc2qq" path="res://AppleGame/Sprites/WallApple.png" id="2_l7iyb"]
+[ext_resource type="FontFile" uid="uid://dfv6unct2kcgs" path="res://Font/Font.ttf" id="3_0cy0c"]
+[ext_resource type="Script" uid="uid://bbd2fq0rsl34d" path="res://Open World/AppleWorld/LEGACY/Dialogues/textboxlabel.gd" id="4_cr1te"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovgee"]
+size = Vector2(27.7093, 29.4244)
+
+[node name="Textbox" type="Node2D"]
+position = Vector2(-128, -304)
+scale = Vector2(0.65733, 0.187662)
+script = ExtResource("1_xqdg2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(6.63837, 19.0079)
+size_flags_horizontal = 0
+texture = ExtResource("2_l7iyb")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="XD" type="Label" parent="."]
+offset_left = 24.3409
+offset_top = 85.2595
+offset_right = 444.341
+offset_bottom = 382.259
+scale = Vector2(0.897658, 3.58641)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0cy0c")
+theme_override_font_sizes/font_size = 88
+script = ExtResource("4_cr1te")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(194.727, 554.187)
+scale = Vector2(13.2889, -36.7629)
+shape = SubResource("RectangleShape2D_ovgee")

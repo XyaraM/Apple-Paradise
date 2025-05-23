@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtpy5iwmrds1q"]
+
+[ext_resource type="Script" uid="uid://d3uc2xpudsm5g" path="res://AppleGame/UI/counter.gd" id="2_lxemt"]
+[ext_resource type="FontFile" uid="uid://bqsrq58mg0jk8" path="res://AppleGame/UI/Font/Minecraft.ttf" id="3_b760u"]
+
+[node name="Counter" type="NinePatchRect"]
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 151.0
+offset_bottom = 50.0
+script = ExtResource("2_lxemt")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 138.0
+offset_top = -4.0
+offset_right = 170.0
+offset_bottom = 73.0
+theme_type_variation = &"HeaderLarge"
+theme_override_fonts/font = ExtResource("3_b760u")
+theme_override_font_sizes/font_size = 65
+uppercase = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 5.0
+offset_right = 48.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("3_b760u")
+theme_override_font_sizes/font_size = 40
+text = "Apples:"
